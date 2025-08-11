@@ -1,0 +1,303 @@
+/* ==== Reset & Global ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ==== Header ==== */
+header {
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 75px;
+  margin-right: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  background: white;
+  padding: 4px;
+}
+
+.logo-text h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+}
+
+.subheading {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* ==== Navigation ==== */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  background: transparent;
+  border: none;
+  font-size: 2.2rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px; 
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  display: block;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* ==== Main Content ==== */
+main {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #0077b6;
+}
+
+.info-tugas {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.anggota {
+  background: #fdfdfd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-left: 5px solid #00b4d8;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.anggota:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.anggota h3 {
+  color: #023e8a;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.anggota p {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.anggota em {
+  font-style: italic;
+  color: #555;
+}
+
+/* ==== Visi Misi ==== */
+.visi-misi {
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.visi-misi h3 {
+  margin-top: 15px;
+  color: #03045e;
+}
+
+.visi-misi ul {
+  padding-left: 20px;
+}
+
+.visi-misi li {
+  margin-bottom: 8px;
+}
+
+/* ==== Footer ==== */
+footer {
+  text-align: center;
+  background: #0077b6;
+  color: #fff;
+  padding: 15px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    flex-direction: column;
+  }
+
+  .logo-img {
+    margin-bottom: 10px;
+  }
+
+  .dropdown-content {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Efek hover & klik untuk tombol dropdown */
+.dropdown-button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-button::after {
+  content: "";
+  position: absolute;
+  left: -50%;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(0, 180, 216, 0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.dropdown-button:hover {
+  background-color: #0096c7;
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+}
+
+.dropdown-button:hover::after {
+  transform: translateX(100%);
+}
+
+.dropdown-button:active {
+  transform: scale(0.97);
+}
+
+/* Animasi fade-in untuk .anggota */
+.anggota.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.anggota.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dropdown aktif */
+.dropdown-content.active {
+  display: block;
+}
+
+/* Saat class .show ditambahkan dari JS, menu dropdown muncul */
+.dropdown-content.show {
+  display: block;
+}
+
+/* Tombol Scroll to Top */
+#scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none; 
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+
+#scrollToTop:hover {
+  transform: scale(1.1);
+  background: linear-gradient(90deg, #0096c7, #48cae4);
+}
+
+#scrollToTop.show {
+  display: flex;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+#scrollToTop.hide {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}

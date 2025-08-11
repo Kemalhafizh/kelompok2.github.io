@@ -1,0 +1,229 @@
+/* === IMPORT FONT & RESET === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://sultansmg.sch.id/wp-content/uploads/2023/01/gedung-sultan.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* === HEADER === */
+header {
+  background: linear-gradient(90deg, rgba(13, 71, 161, 0.95), rgba(25, 118, 210, 0.9));
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid #0d47a1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 75px;
+  margin-right: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  background: white;
+  padding: 4px;
+}
+
+.logo-text h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.subheading {
+  font-size: 1rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* === DROPDOWN MENU === */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  background-color: white;
+  border-radius: 10px;
+  min-width: 220px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 99;
+  animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: #0d47a1;
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #e3f2fd;
+  transform: translateX(4px);
+}
+
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
+/* === MAIN CONTENT === */
+main {
+  padding: 2rem;
+  backdrop-filter: blur(6px);
+  background-color: rgba(255, 255, 255, 0.92);
+  margin: 2rem auto;
+  max-width: 960px;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease-in-out;
+}
+
+section {
+  margin-bottom: 2rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.8s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+  color: #0d47a1;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: #1976d2;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+
+section p {
+  margin-top: 0.5rem;
+}
+
+/* === FLOWCHART IMAGE === */
+.flowchart-img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 12px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.flowchart-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #0d47a1;
+  color: white;
+  font-size: 0.9rem;
+  border-top: 2px solid #1565c0;
+  margin-top: 2rem;
+  animation: fadeIn 1.2s ease;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .dropdown-content {
+    min-width: 100%;
+    right: 0;
+    top: 50px;
+  }
+
+  main {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  section h2::after {
+    width: 30px;
+  }
+}
