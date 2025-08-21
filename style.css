@@ -205,8 +205,10 @@ footer {
 /* === RESPONSIVE TABLET === */
 @media (max-width: 768px) {
   .header-container {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;              
+    justify-content: space-between;  
+    align-items: center;
+    width: 100%;
   }
 
   .logo-text h1 {
@@ -215,16 +217,16 @@ footer {
 
   /* Dropdown di tablet */
   .dropdown-content {
-    position: static;       
+    position: static;
     width: 100%;
     margin-top: 0.5rem;
     border-radius: 8px;
-    display: none;          
-    flex-direction: column; 
+    display: none;
+    flex-direction: column;
   }
 
   .dropdown-content.show {
-    display: flex;          
+    display: flex;
   }
 
   .dropdown-content a {
@@ -241,17 +243,24 @@ footer {
 
 /* === HP kecil banget (extra) === */
 @media (max-width: 600px) {
+  .header-container {
+    flex-direction: row;              
+    justify-content: space-between;   
+    align-items: center;
+    width: 100%;
+  }
+
   .dropdown-content {
     position: absolute;
-    top: 100%;        
-    left: 0;         
-    width: 100%;     
+    top: 100%;
+    left: 0;
+    width: 100%;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     background: #fff;
     display: none;
     flex-direction: column;
-    z-index: 100;      
+    z-index: 100;
   }
 
   .dropdown-content.show {
