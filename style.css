@@ -241,12 +241,11 @@ footer {
 
 /* === HP kecil banget (extra) === */
 @media (max-width: 600px) {
-
   .dropdown-content {
     position: absolute;
     top: 100%;        
-    right: 0;          
-    width: 200px;      
+    left: 0;         
+    width: 100%;     
     border-radius: 0 0 10px 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     background: #fff;
@@ -264,29 +263,5 @@ footer {
     padding: 1rem;
     border-bottom: 1px solid #eee;
     color: #0d47a1;
-  }
-
-  .logo-img {
-    height: 45px;
-    margin-right: 8px;
-  }
-
-  .logo-text h1 {
-    font-size: 1rem;
-  }
-
-  .subheading {
-    font-size: 0.75rem;
-  }
-
-  /* Tombol hamburger */
-  .dropdown-button {
-    display: block;
-    cursor: pointer;
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    color: #fff;
-    z-index: 101;
   }
 }
