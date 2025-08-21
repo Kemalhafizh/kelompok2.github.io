@@ -202,7 +202,7 @@ footer {
   }
 }
 
-/* === RESPONSIVE === */
+/* === RESPONSIVE TABLET/HP === */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
@@ -213,39 +213,28 @@ footer {
     font-size: 1.3rem;
   }
 
+  /* Dropdown di tablet/HP */
   .dropdown-content {
-    min-width: 100%;
-    right: 0;
-    top: 50px;
-  }
-
-  main {
-    padding: 1rem;
-    margin: 1rem;
-  }
-
-  section h2::after {
-    width: 30px;
-  }
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .logo-text h1 {
-    font-size: 1.3rem;
-  }
-
-  /* Dropdown di tablet/HP kecil */
-  .dropdown-content {
-    position: static;   /* biar ikut flow, gak ketiban */
+    position: static;       
     width: 100%;
     margin-top: 0.5rem;
     border-radius: 8px;
+    display: none;          
+    flex-direction: column; 
+  }
+
+  .dropdown-content.show {
+    display: flex;          
+  }
+
+  .dropdown-content a {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    color: #0d47a1;
+  }
+
+  .dropdown-content a:hover {
+    background: #f0f0f0;
   }
 
   main {
@@ -258,9 +247,8 @@ footer {
   }
 }
 
-/* === RESPONSIVE EXTRA (HP kecil banget) === */
+/* === HP kecil banget (extra) === */
 @media (max-width: 600px) {
-  
   header {
     padding: 0.8rem 1rem;
     display: flex;
@@ -295,33 +283,11 @@ footer {
     z-index: 101;
   }
 
-  /* Menu muncul di bawah header */
+  /* Menu tetap full width */
   .dropdown-content {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
     top: 100%;
     left: 0;
-    background: #fff;
+    width: 100%;
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    z-index: 100;
-    overflow: hidden;
-  }
-
-  .dropdown-content.show {
-    display: flex;
-  }
-
-  .dropdown-content a {
-    padding: 1rem;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-    color: #333;
-  }
-
-  .dropdown-content a:hover {
-    background: #f0f0f0;
   }
 }
