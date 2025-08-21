@@ -111,7 +111,8 @@ header {
   transform: translateX(4px);
 }
 
-.dropdown.show .dropdown-content {
+/* Show menu saat toggle */
+#dropdownMenu.show {
   display: block;
 }
 
@@ -230,18 +231,18 @@ footer {
 
 /* === RESPONSIVE EXTRA === */
 @media (max-width: 600px) {
-  /* Header jadi fleksibel */
   header {
     padding: 0.8rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+    background: #0d47a1; 
+    color: #fff;
   }
 
-  /* Logo kecil */
   .logo-img {
-    height: 50px;
+    height: 45px;
     margin-right: 8px;
   }
 
@@ -253,35 +254,32 @@ footer {
     font-size: 0.75rem;
   }
 
-  /* === Tombol Hamburger === */
-  .hamburger {
+  #dropdownButton {
     display: block;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     background: none;
     border: none;
+    color: #fff;
   }
 
-  /* Hide menu awalnya */
-  nav {
-    display: none;
-    flex-direction: column;
-    background: #fff;
+  .dropdown-content {
+    width: 200px;
     position: absolute;
-    top: 100%;  
-    left: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 99;
+    top: 50px;
+    right: 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
 
-  nav.active {
-    display: flex; 
-  }
-
-  nav a {
+  .dropdown-content a {
     padding: 1rem;
-    text-align: center;
+    text-align: left;
     border-bottom: 1px solid #eee;
+    color: #333;
+  }
+
+  .dropdown-content a:hover {
+    background: #f0f0f0;
   }
 }
