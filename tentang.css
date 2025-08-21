@@ -301,3 +301,72 @@ footer {
   from { opacity: 1; transform: translateY(0); }
   to { opacity: 0; transform: translateY(20px); }
 }
+
+/* ==== Extra Responsive for Mobile ==== */
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+
+  header {
+    padding: 10px 0;
+  }
+
+  .logo-img {
+    height: 55px;  
+    margin: 0 0 8px 0;
+  }
+
+  .logo-text h1 {
+    font-size: 1.3rem; 
+    text-align: center;
+  }
+
+  .subheading {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  main {
+    margin: 15px 10px;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .anggota h3 {
+    font-size: 1rem;
+  }
+
+  .anggota p {
+    font-size: 0.85rem;
+  }
+
+  .visi-misi {
+    padding: 15px;
+  }
+
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    margin-top: 8px;
+    box-shadow: none;
+    border-radius: 6px;
+  }
+
+  .dropdown-content a {
+    text-align: center;
+    padding: 12px;
+  }
+
+  #scrollToTop {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    bottom: 15px;
+    right: 15px;
+  }
+}

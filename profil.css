@@ -261,3 +261,79 @@ footer {
     padding: 1.5rem;
   }
 }
+
+/* ==== Extra Responsive for Mobile ==== */
+@media (max-width: 600px) {
+
+  /* Body font lebih kecil */
+  body {
+    font-size: 0.9rem;
+  }
+
+  /* Header lebih rapat */
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+
+  .logo-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .subheading {
+    font-size: 0.75rem;
+  }
+
+  /* Main content biar nggak sempit */
+  main {
+    padding: 1rem;
+  }
+
+  /* Profil intro section */
+  .profil-intro {
+    padding: 40px 15px;
+  }
+
+  .profil-intro h1 {
+    font-size: 1.4rem;
+  }
+
+  .profil-intro p {
+    font-size: 0.9rem;
+  }
+
+  .school-logo {
+    width: 90px;
+  }
+
+  /* Judul bagian (h2) lebih kecil */
+  .keunggulan h2,
+  .fasilitas h2,
+  .galeri h2 {
+    font-size: 1.4rem;
+  }
+
+  /* Grid biar tetep 1 kolom kalau layar kecil */
+  .facility-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: 1fr 1fr; 
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    padding: 0.6rem;
+  }
+
+  /* Footer font lebih kecil */
+  footer {
+    font-size: 0.8rem;
+    padding: 0.8rem;
+  }
+}

@@ -258,3 +258,105 @@ footer {
   font-size: 0.9rem;
   margin-top: 40px;
 }
+
+/* === Extra Responsive for Mobile === */
+@media (max-width: 600px) {
+
+  /* Body font lebih kecil biar muat */
+  body {
+    font-size: 0.9rem;
+  }
+
+  /* Header compact */
+  header {
+    padding: 10px 15px;
+  }
+
+  .logo-img {
+    height: 45px;
+  }
+
+  .logo-text h1 {
+    font-size: 1.1rem;
+  }
+
+  .subheading {
+    font-size: 0.75rem;
+  }
+
+  .dropdown-button {
+    font-size: 1.5rem;
+  }
+
+  /* Hero Section */
+  .contact-hero {
+    padding: 40px 15px;
+  }
+
+  .contact-hero h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-hero p {
+    font-size: 0.9rem;
+  }
+
+  /* Grid → biar nggak sempit */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    padding: 20px 10px;
+    gap: 18px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  /* Map Container */
+  .map-container {
+    padding: 15px;
+  }
+
+  /* Quick Questions form */
+  .quick-questions form {
+    gap: 10px;
+  }
+
+  .quick-questions input,
+  .quick-questions textarea {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .btn-secondary {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  /* FAQ */
+  .faq {
+    padding: 25px 15px;
+  }
+
+  details {
+    padding: 10px 12px;
+  }
+
+  /* Sosial media → kasih teks muncul biar jelas */
+  .social-links {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .social-links span {
+    display: inline;
+    font-size: 0.8rem;
+    margin-left: 5px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.8rem;
+    padding: 12px;
+  }
+}

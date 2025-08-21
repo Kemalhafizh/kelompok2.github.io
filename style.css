@@ -227,3 +227,52 @@ footer {
     width: 30px;
   }
 }
+
+/* === RESPONSIVE EXTRA === */
+@media (max-width: 600px) {
+
+  body {
+    font-size: 0.9rem;
+  }
+
+  header {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo-img {
+    height: 55px; 
+    margin-right: 8px;
+  }
+
+  .logo-text h1 {
+    font-size: 1.1rem; 
+  }
+
+  .subheading {
+    font-size: 0.8rem;
+  }
+
+  main {
+    margin: 0.5rem;
+    padding: 0.8rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.1rem;
+  }
+
+  .flowchart-img {
+    max-width: 100%;
+    height: auto; 
+  }
+
+  .dropdown-content {
+    position: static; 
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
