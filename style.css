@@ -230,49 +230,58 @@ footer {
 
 /* === RESPONSIVE EXTRA === */
 @media (max-width: 600px) {
-
-  body {
-    font-size: 0.9rem;
-  }
-
+  /* Header jadi fleksibel */
   header {
     padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
   }
 
+  /* Logo kecil */
   .logo-img {
-    height: 55px; 
+    height: 50px;
     margin-right: 8px;
   }
 
   .logo-text h1 {
-    font-size: 1.1rem; 
+    font-size: 1rem;
   }
 
   .subheading {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
-  main {
-    margin: 0.5rem;
-    padding: 0.8rem;
+  /* === Tombol Hamburger === */
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
   }
 
-  section {
-    padding: 1rem;
-  }
-
-  section h2 {
-    font-size: 1.1rem;
-  }
-
-  .flowchart-img {
-    max-width: 100%;
-    height: auto; 
-  }
-
-  .dropdown-content {
-    position: static; 
+  /* Hide menu awalnya */
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 100%;  
+    left: 0;
     width: 100%;
-    margin-top: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 99;
+  }
+
+  nav.active {
+    display: flex; 
+  }
+
+  nav a {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
   }
 }
