@@ -239,19 +239,20 @@ footer {
   }
 }
 
-/* === HP kecil banget (extra) === */  
+/* === HP kecil banget (extra) === */
 @media (max-width: 600px) {
+
   .dropdown-content {
     position: absolute;
-    top: 100%;           
-    right: 0;            
-    left: auto;          
-    width: 200px;       
+    top: 100%;        
+    right: 0;          
+    width: 200px;      
     border-radius: 0 0 10px 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     background: #fff;
-    display: none;       
+    display: none;
     flex-direction: column;
+    z-index: 100;      
   }
 
   .dropdown-content.show {
