@@ -229,10 +229,38 @@ footer {
   }
 }
 
-/* === RESPONSIVE EXTRA === */
-@media (max-width: 600px) {
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-  /* Header */
+  .logo-text h1 {
+    font-size: 1.3rem;
+  }
+
+  /* Dropdown di tablet/HP kecil */
+  .dropdown-content {
+    position: static;   /* biar ikut flow, gak ketiban */
+    width: 100%;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+  }
+
+  main {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  section h2::after {
+    width: 30px;
+  }
+}
+
+/* === RESPONSIVE EXTRA (HP kecil banget) === */
+@media (max-width: 600px) {
+  
   header {
     padding: 0.8rem 1rem;
     display: flex;
@@ -243,7 +271,6 @@ footer {
     color: #fff;
   }
 
-  /* Logo */
   .logo-img {
     height: 45px;
     margin-right: 8px;
@@ -257,44 +284,44 @@ footer {
     font-size: 0.75rem;
   }
 
-  /* Tombol Hamburger */
-  #dropdownButton {
+  /* Tombol hamburger */
+  .dropdown-button {
     display: block;
     cursor: pointer;
     font-size: 1.8rem;
     background: none;
     border: none;
     color: #fff;
-    z-index: 101; 
+    z-index: 101;
   }
 
-  /* Menu */
-  nav {
+  /* Menu muncul di bawah header */
+  .dropdown-content {
     display: none;
     flex-direction: column;
-    background: #fff;
+    width: 100%;
     position: absolute;
-    top: 100%;  
-    right: 0;   
-    width: 220px;
+    top: 100%;
+    left: 0;
+    background: #fff;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     z-index: 100;
     overflow: hidden;
   }
 
-  nav.active {
+  .dropdown-content.show {
     display: flex;
   }
 
-  nav a {
+  .dropdown-content a {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid #eee;
     color: #333;
   }
 
-  nav a:hover {
+  .dropdown-content a:hover {
     background: #f0f0f0;
   }
 }
