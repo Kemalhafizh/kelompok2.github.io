@@ -231,6 +231,8 @@ footer {
 
 /* === RESPONSIVE EXTRA === */
 @media (max-width: 600px) {
+
+  /* Header */
   header {
     padding: 0.8rem 1rem;
     display: flex;
@@ -241,6 +243,7 @@ footer {
     color: #fff;
   }
 
+  /* Logo */
   .logo-img {
     height: 45px;
     margin-right: 8px;
@@ -254,6 +257,7 @@ footer {
     font-size: 0.75rem;
   }
 
+  /* Tombol Hamburger */
   #dropdownButton {
     display: block;
     cursor: pointer;
@@ -261,25 +265,36 @@ footer {
     background: none;
     border: none;
     color: #fff;
+    z-index: 101; 
   }
 
-  .dropdown-content {
-    width: 200px;
+  /* Menu */
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
     position: absolute;
-    top: 50px;
-    right: 0;
+    top: 100%;  
+    right: 0;   
+    width: 220px;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 100;
+    overflow: hidden;
   }
 
-  .dropdown-content a {
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid #eee;
     color: #333;
   }
 
-  .dropdown-content a:hover {
+  nav a:hover {
     background: #f0f0f0;
   }
 }
