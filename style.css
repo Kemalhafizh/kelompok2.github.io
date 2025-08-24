@@ -35,7 +35,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  position: relative;
 }
 
 .logo {
@@ -66,6 +67,7 @@ header {
 /* === DROPDOWN MENU === */
 .dropdown {
   position: relative;
+  margin-left: auto;
 }
 
 .dropdown-button {
@@ -87,7 +89,7 @@ header {
   display: none;
   position: absolute;
   right: 0;
-  top: 60px;
+  top: 100%;
   background-color: white;
   border-radius: 10px;
   min-width: 220px;
