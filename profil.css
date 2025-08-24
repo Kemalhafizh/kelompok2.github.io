@@ -271,6 +271,30 @@ footer {
 
 /* ==== Extra Responsive for Mobile ==== */
 @media (max-width: 600px) {
+  /* Dropdown menu mobile fix */
+#dropdownMenu {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 999;
+  display: none;
+  flex-direction: column; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 0.5rem 1rem;
+}
+
+#dropdownMenu a {
+  padding: 0.8rem 0;
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+#dropdownMenu a:hover {
+  color: #2a8f2a;
+}
 
   /* Body font lebih kecil */
   body {
