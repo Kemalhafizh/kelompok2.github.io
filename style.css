@@ -254,6 +254,10 @@ footer {
     align-items: center;
   }
 
+  .dropdown {
+    position: relative;
+    width: auto;
+  }
   .dropdown-content {
     position: absolute;
     top: 100%;
@@ -265,7 +269,7 @@ footer {
     background: #fff;
     display: none;
     flex-direction: column;
-    z-index: 100;
+    z-index: 999;
   }
 
   .dropdown-content.show {
