@@ -256,12 +256,14 @@ footer {
 
 /* =========================
    RESPONSIVE
-   ========================= */
+   ========================== */
+
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
     align-items: flex-start;
   }
+
   main {
     padding: 1.5rem;
   }
@@ -273,6 +275,7 @@ footer {
   /* Body font lebih kecil */
   body {
     font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   /* Header lebih rapat */
@@ -285,60 +288,62 @@ footer {
   }
 
   .logo-text h1 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .subheading {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   /* Main content biar nggak sempit */
   main {
-    padding: 1rem;
+    padding: 0.8rem;
   }
 
   /* Profil intro section */
   .profil-intro {
-    padding: 40px 15px;
+    padding: 20px 10px;
   }
 
   .profil-intro h1 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .profil-intro p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .school-logo {
-    width: 90px;
+    width: 80px;
   }
 
   /* Judul bagian (h2) lebih kecil */
   .keunggulan h2,
   .fasilitas h2,
   .galeri h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
-  /* Grid biar tetep 1 kolom kalau layar kecil */
+  /* Fasilitas grid full 1 kolom */
   .facility-grid {
     grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-
-  .gallery-container {
-    grid-template-columns: 1fr 1fr; 
+    padding: 0.8rem;
     gap: 1rem;
   }
 
+  /* Galeri 1 kolom biar aman */
+  .gallery-container {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
   .gallery-item {
-    padding: 0.6rem;
+    padding: 0.5rem;
   }
 
   /* Footer font lebih kecil */
   footer {
-    font-size: 0.8rem;
-    padding: 0.8rem;
+    font-size: 0.75rem;
+    padding: 0.6rem;
   }
 }
