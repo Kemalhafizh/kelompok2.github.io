@@ -88,11 +88,13 @@ header {
 .dropdown-content {
   display: none;
   position: absolute;
+  left: auto;
   right: 0;
   top: 100%;
   background-color: white;
   border-radius: 10px;
   min-width: 220px;
+  max-width: 90vw;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   z-index: 99;
