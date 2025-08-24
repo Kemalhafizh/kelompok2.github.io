@@ -257,7 +257,8 @@ footer {
   .dropdown-content {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: auto;
+    right: 0;
     width: 100%;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
