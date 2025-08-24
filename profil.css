@@ -97,23 +97,28 @@ header {
 
 .dropdown-button {
   background: none;
-  border: 2px solid #ffffff;
-  padding: 0.5rem 0.8rem;
-  border-radius: 6px;
-  font-size: 1.2rem;
+  border: none;
+  padding: 0;
+  font-size: 2rem;
   cursor: pointer;
   color: #ffffff;
+}
+
+.dropdown-button:focus {
+  outline: none;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 100%;
   right: 0;
   background: #ffffff;
   min-width: 200px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   overflow: hidden;
+  z-index: 999;
 }
 
 .dropdown-content a {
