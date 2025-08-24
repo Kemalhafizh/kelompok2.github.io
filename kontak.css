@@ -260,6 +260,13 @@ footer {
 }
 
 /* === Extra Responsive for Mobile === */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 @media (max-width: 600px) {
 
   /* Body font lebih kecil biar muat */
