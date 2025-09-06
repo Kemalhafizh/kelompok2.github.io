@@ -97,7 +97,7 @@ header {
   max-width: 90vw;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  z-index: 99;
+  z-index: 9999;
   animation: fadeIn 0.3s ease;
 }
 
@@ -235,7 +235,7 @@ footer {
     display: none;
     flex-direction: column;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    z-index: 999;
+    z-index: 9999;
   }
 
   .dropdown-content.show {
