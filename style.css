@@ -224,19 +224,20 @@ footer {
     width: auto;
   }
 
-   .dropdown-content {
+  .dropdown-content {
     position: absolute;
-    top: 100%;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
+    top: calc(100% + 8px);
+    right: 12px;
+    left: auto;
+    transform: none;
     min-width: 220px;
+    max-width: 90vw;
     border-radius: 10px;
     background: #fff;
     display: none;
-    flex-direction: column;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    z-index: 9999;
+   flex-direction: column;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+   z-index: 9999;
   }
 
   .dropdown-content.show {
