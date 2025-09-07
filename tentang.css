@@ -197,10 +197,10 @@ footer {
     margin-bottom: 10px;
   }
 
-  .dropdown-content {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
+   .dropdown-content {
+    right: 0;
+    left: auto;
+    transform: none;
   }
 }
 
