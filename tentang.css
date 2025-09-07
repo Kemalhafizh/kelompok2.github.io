@@ -322,12 +322,12 @@ footer {
 
   .logo-text h1 {
     font-size: 1.3rem; 
-    text-align: center;
+    text-align: left;
   }
 
   .subheading {
     font-size: 0.75rem;
-    text-align: center;
+    text-align: left;
   }
 
   main {
