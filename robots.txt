@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kemalhafizh.github.io/kelompok2.github.io/sitemap.xml
