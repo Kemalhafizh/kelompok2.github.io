@@ -287,9 +287,9 @@ footer {
   /* Dropdown menu mobile fix */
 #dropdownMenu {
   position: absolute;
-  top: 60px;
-  left: 0;
-  width: 200px;
+  top: 100%;
+  right: 0;
+  width: 100%;
   background: #fff;     
   z-index: 999;
   display: none;
