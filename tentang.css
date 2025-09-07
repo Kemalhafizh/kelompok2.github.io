@@ -31,7 +31,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .logo {
@@ -61,6 +61,7 @@ header {
 /* ==== Navigation ==== */
 .dropdown {
   position: relative;
+  margin-left: auto;
 }
 
 .dropdown-button {
@@ -183,12 +184,13 @@ footer {
 /* ==== Responsive ==== */
 @media (max-width: 768px) {
   .header-container {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .logo {
-    flex-direction: column;
+    flex-direction: row;
+    text-align: center;
   }
 
   .logo-img {
