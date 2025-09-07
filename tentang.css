@@ -352,16 +352,18 @@ footer {
   }
 
   .dropdown-content {
-    position: static;
-    width: 100%;
-    margin-top: 8px;
-    box-shadow: none;
-    border-radius: 6px;
+    position: absolute;
+    right: 0;
+    left: auto;
+    width: 180px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
   }
 
   .dropdown-content a {
-    text-align: center;
-    padding: 12px;
+    text-align: left;
+    padding: 10px 15px;
   }
 
   #scrollToTop {
