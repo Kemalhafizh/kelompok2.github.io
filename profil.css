@@ -74,7 +74,7 @@ header {
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  .img-logo {
+  .logo-img {
     height: 40px;
   }
 
@@ -93,6 +93,7 @@ header {
    ========================= */
 .dropdown {
   position: relative;
+  margin-left: auto;
 }
 
 .dropdown-button {
@@ -260,8 +261,9 @@ footer {
 
 @media (max-width: 768px) {
   .header-container {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   main {
@@ -271,12 +273,23 @@ footer {
 
 /* ==== Extra Responsive for Mobile ==== */
 @media (max-width: 600px) {
+.dropdown {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-button {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
   /* Dropdown menu mobile fix */
 #dropdownMenu {
   position: absolute;
   top: 60px;
   left: 0;
-  width: 100%;
+  width: 200px;
   background: #fff;     
   z-index: 999;
   display: none;
