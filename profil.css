@@ -289,11 +289,12 @@ footer {
 
   /* Dropdown menu mobile fix */
 .dropdown-content {
-  position: fixed;
+  position: absolute;
   top: 60px;
-  left: 0;
+  left: auto;
   right: 0;
-  width: 100%;
+  width: auto;
+  min-width: 200px;
   background: #fff;  
   z-index: 999;
   display: none;
