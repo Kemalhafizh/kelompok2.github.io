@@ -289,8 +289,8 @@ footer {
 
   /* Dropdown menu mobile fix */
 .dropdown-content {
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 60px;
   left: 0;
   right: 0;
   width: 100%;
