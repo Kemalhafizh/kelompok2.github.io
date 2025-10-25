@@ -374,3 +374,39 @@ footer {
     right: 15px;
   }
 }
+
+/* ==== Style untuk Foto Profil Kemal ==== */
+
+/* Style untuk wadah/container yang membungkus kedua gambar */
+.profile-images {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+/* Style untuk masing-masing gambar di dalamnya */
+.profile-images img {
+  width: 100%;
+  max-width: 250px;
+  height: auto; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-images img:hover {
+  transform: scale(1.05);
+}
+
+/* ==== Aturan Tambahan untuk Layar Kecil (HP) ==== */
+@media (max-width: 600px) {
+  .profile-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-images img {
+    max-width: 80%;
+  }
+}
