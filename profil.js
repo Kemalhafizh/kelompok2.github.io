@@ -1,38 +1,56 @@
 /* =========================
-   Profil Sekolah - JS
+   PROFIL.JS - FINAL VERSION
    ========================= */
 
-// Fungsi toggle dropdown menu
-function toggleDropdown(event) {
-  event.stopPropagation(); // cegah event bubbling
-  const dropdown = document.getElementById("dropdownMenu");
-  dropdown.style.display =
-    dropdown.style.display === "block" ? "none" : "block";
+// Utility selector untuk kode yang lebih ringkas
+const $ = (selector, scope = document) => scope.querySelector(selector);
+const $$ = (selector, scope = document) => scope.querySelectorAll(selector);
+
+// === 1. Dropdown Menu ===
+const dropdownButton = $('#dropdownButton');
+const dropdownMenu = $('#dropdownMenu');
+
+if (dropdownButton && dropdownMenu) {
+  dropdownButton.addEventListener('click', e => {
+    e.stopPropagation();
+    const isExpanded = dropdownMenu.classList.toggle('show');
+    dropdownButton.setAttribute('aria-expanded', isExpanded);
+  });
+
+  // Event untuk menutup menu jika klik di luar area menu
+  window.addEventListener('click', () => {
+    if (dropdownMenu.classList.contains('show')) {
+      dropdownMenu.classList.remove('show');
+      dropdownButton.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
 
-// Tutup dropdown jika klik di luar menu
-window.addEventListener("click", function () {
-  const dropdown = document.getElementById("dropdownMenu");
-  if (dropdown) {
-    dropdown.style.display = "none";
+// === 2. Interaksi Klik Gambar Galeri ===
+$$('.gallery-item img').forEach((img) => {
+  img.addEventListener('click', () => {
+    alert(`📸 Kamu membuka foto: ${img.alt}`);
+  });
+});
+
+// === 3. Tombol Back to Top ===
+const backToTopBtn = document.createElement('button');
+backToTopBtn.id = 'backToTopBtn';
+backToTopBtn.className = 'back-to-top';
+backToTopBtn.title = 'Kembali ke atas';
+backToTopBtn.innerHTML = '⬆';
+document.body.appendChild(backToTopBtn);
+
+// Tampilkan tombol saat scroll
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add('show');
+  } else {
+    backToTopBtn.classList.remove('show');
   }
 });
 
-// Efek hover di galeri (smooth scaling sudah ada di CSS, ini tambahan kecil)
-document.querySelectorAll(".gallery-item img").forEach((img) => {
-  img.addEventListener("mouseenter", () => {
-    img.style.transition = "transform 0.3s ease";
-    img.style.transform = "scale(1.05)";
-  });
-  img.addEventListener("mouseleave", () => {
-    img.style.transform = "scale(1)";
-  });
-});
-
-// Interaksi klik gambar galeri
-document.querySelectorAll(".gallery-item img").forEach((img) => {
-  img.addEventListener("click", () => {
-    alert(`📸 Kamu membuka foto: ${img.alt}`);
-    console.log(`Foto dibuka: ${img.alt}`);
-  });
+// Fungsi scroll ke atas saat diklik
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });

@@ -5,13 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <!-- SEO -->
   <title>Profil Sekolah - SMA Islam Sultan Agung 1 Semarang</title>
   <meta name="description" content="Profil SMA Islam Sultan Agung 1 Semarang - Keunggulan, Prestasi, dan Fasilitas Sekolah." />
   <meta name="keywords" content="Profil Sekolah, SMA Islam Sultan Agung 1 Semarang, Keunggulan, Prestasi, Fasilitas, Informatika, Tugas Website">
   <meta name="author" content="Kelompok 2 Informatika XII-3">
 
-   <!-- Open Graph -->
   <meta property="og:title" content="Profil Sekolah - SMA Islam Sultan Agung 1 Semarang">
   <meta property="og:description" content="Profil SMA Islam Sultan Agung 1 Semarang yang menampilkan keunggulan, prestasi, dan fasilitas sekolah.">
   <meta property="og:image" content="https://kemalhafizh.github.io/kelompok2.github.io/backgroundsekolah.jpg">
@@ -20,31 +18,26 @@
 
   <meta name="google-site-verification" content="mQCwzaAmnyIeDp33AsbCFUg5QnPXQW2YKPg0-bNUgmQ" />
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="profil.css" />
 
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
-  <!-- Header -->
   <header>
     <div class="header-container">
       <div class="logo">
-        <img src="logokelompok-removebg-preview.png" alt="Logo Kelompok 2 Informatika" class="logo-img" />
+        <img src="Gambar_WhatsApp_2025-07-24_pukul_14.59.56_8e368df4-removebg-preview.png" alt="Logo SMA Islam Sultan Agung 1 Semarang" class="logo-img" />
         <div class="logo-text">
           <h1>SMA Islam Sultan Agung 1 Semarang</h1>
           <p class="subheading">Profil Sekolah</p>
         </div>
       </div>
 
-      <!-- Navigation -->
       <nav class="dropdown">
-        <button class="dropdown-button" onclick="toggleDropdown(event)" aria-label="Menu navigasi">☰</button>
+        <button id="dropdownButton" class="dropdown-button" aria-label="Menu navigasi" aria-expanded="false">☰</button>
         <div class="dropdown-content" id="dropdownMenu">
           <a href="index.html">Beranda</a>
           <a href="tentang.html">Tentang Kami</a>
@@ -55,9 +48,7 @@
     </div>
   </header>
 
-  <!-- Main Content -->
   <main>
-    <!-- Logo Sekolah -->
     <section class="profil-intro">
       <img src="Gambar_WhatsApp_2025-07-24_pukul_14.59.56_8e368df4-removebg-preview.png" 
            alt="Logo SMA Islam Sultan Agung 1 Semarang" class="school-logo" />
@@ -68,7 +59,6 @@
       </p>
     </section>
 
-    <!-- Keunggulan -->
     <section class="keunggulan">
       <h2>Keunggulan Sekolah</h2>
       <ul>
@@ -79,7 +69,6 @@
       </ul>
     </section>
 
-    <!-- Fasilitas -->
     <section class="fasilitas">
       <h2>Fasilitas Sekolah</h2>
       <div class="facility-grid">
@@ -92,8 +81,6 @@
           <li>Laboratorium Geografi</li>
           <li>Laboratorium Komputer</li>
           <li>Laboratorium Audio Visual & Bahasa</li>
-        </ul>
-        <ul>
           <li>Perpustakaan</li>
           <li>Lapangan Basket, Voli, Bulutangkis, Lompat Jauh, Hockey</li>
           <li>Kantin</li>
@@ -106,50 +93,48 @@
       </div>
     </section>
 
-    <!-- Galeri -->
     <section class="galeri">
       <h2>Galeri Foto</h2>
       <p>Berikut adalah beberapa dokumentasi fasilitas dan bangunan utama SMA Islam Sultan Agung 1 Semarang.</p>
       <div class="gallery-container">
-        <!-- Tambahkan foto-foto fasilitas/gedung di sini -->
         <div class="gallery-item">
-          <img src="backgroundsekolah.jpg" alt="Gedung utama sekolah">
+          <img src="backgroundsekolah.jpg" alt="Gedung utama sekolah" loading="lazy">
           <p>Gedung Utama</p>
         </div>
         <div class="gallery-item">
-          <img src="komputer.jpg" alt="Lab Komputer">
+          <img src="komputer.jpg" alt="Lab Komputer" loading="lazy">
           <p>Lab Komputer</p>
         </div>
         <div class="gallery-item">
-          <img src="ruangkelas.jpg" alt="Ruang Kelas">
+          <img src="ruangkelas.jpg" alt="Ruang Kelas" loading="lazy">
           <p>Ruang Kelas XII</p>
         </div>
         <div class="gallery-item">
-          <img src="perpustakaan.jpg" alt="Perpustakaan">
+          <img src="perpustakaan.jpg" alt="Perpustakaan" loading="lazy">
           <p>Perpustakaan</p>
         </div>
         <div class="gallery-item">
-          <img src="Boarding.jpg" alt="asrama">
+          <img src="Boarding.jpg" alt="asrama" loading="lazy">
           <p>Asrama</p>
         </div>
         <div class="gallery-item">
-          <img src="aula.jpg" alt="Aula">
+          <img src="aula.jpg" alt="Aula" loading="lazy">
           <p>Aula</p>
         </div>
         <div class="gallery-item">
-          <img src="ruangbk.jpg" alt="Ruang BK">
+          <img src="ruangbk.jpg" alt="Ruang BK" loading="lazy">
           <p>Ruang BK</p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <button id="backToTopBtn" class="back-to-top" title="Kembali ke atas">⬆</button>
+
   <footer>
     <p>&copy; 2025 SMA Islam Sultan Agung 1 Semarang | Website Tugas Informatika XII-3</p>
   </footer>
 
-  <!-- JavaScript -->
   <script src="profil.js"></script>
 </body>
 
