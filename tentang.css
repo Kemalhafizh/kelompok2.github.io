@@ -1,4 +1,4 @@
-/* ==== Reset & Global ==== */
+/* ==== 1. RESET & GLOBAL STYLES ==== */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +16,7 @@ body {
   line-height: 1.6;
 }
 
-/* ==== Header ==== */
+/* ==== 2. HEADER ==== */
 header {
   background: linear-gradient(90deg, #0077b6, #00b4d8);
   color: #fff;
@@ -31,7 +31,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
 }
 
 .logo {
@@ -58,10 +57,9 @@ header {
   opacity: 0.9;
 }
 
-/* ==== Navigation ==== */
+/* ==== 3. NAVIGATION (DROPDOWN MENU) ==== */
 .dropdown {
   position: relative;
-  margin-left: auto;
 }
 
 .dropdown-button {
@@ -70,9 +68,37 @@ header {
   font-size: 2.2rem;
   color: #fff;
   cursor: pointer;
-  padding: 10px; 
+  padding: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
+.dropdown-button:active {
+  transform: scale(0.97);
+}
+
+.dropdown-button:hover {
+  background-color: #0096c7;
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+}
+
+/* Efek kilat saat hover */
+.dropdown-button::after {
+  content: "";
+  position: absolute;
+  left: -50%;
+  top: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(0, 180, 216, 0.3), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+
+.dropdown-button:hover::after {
+  transform: translateX(100%);
+}
 
 .dropdown-content {
   display: none;
@@ -80,10 +106,15 @@ header {
   right: 0;
   background-color: #fff;
   min-width: 160px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   overflow: hidden;
   z-index: 1000;
+}
+
+/* Class .show ditambahkan via JS untuk menampilkan menu */
+.dropdown-content.show {
+  display: block;
 }
 
 .dropdown-content a {
@@ -98,7 +129,7 @@ header {
   background-color: #f1f1f1;
 }
 
-/* ==== Main Content ==== */
+/* ==== 4. MAIN CONTENT ==== */
 main {
   max-width: 1100px;
   margin: 30px auto;
@@ -112,6 +143,7 @@ h2 {
   color: #0077b6;
 }
 
+/* --- Section: Profil Anggota --- */
 .info-tugas {
   background: #fff;
   padding: 20px;
@@ -144,12 +176,40 @@ h2 {
   font-size: 0.95rem;
 }
 
-.anggota em {
-  font-style: italic;
-  color: #555;
+/* Style untuk foto profil per anggota */
+.anggota .profile-pic {
+  display: block; 
+  width: 150px; 
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 3px solid #fff;
 }
 
-/* ==== Visi Misi ==== */
+/* Style khusus foto profil */
+.profile-images {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.profile-images img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-images img:hover {
+  transform: scale(1.05);
+}
+
+/* --- Section: Visi Misi --- */
 .visi-misi {
   margin-top: 30px;
   background: #fff;
@@ -171,7 +231,7 @@ h2 {
   margin-bottom: 8px;
 }
 
-/* ==== Footer ==== */
+/* ==== 5. FOOTER ==== */
 footer {
   text-align: center;
   background: #0077b6;
@@ -181,84 +241,8 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ==== Responsive ==== */
-@media (max-width: 768px) {
-  .header-container {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .logo {
-    flex-direction: row;
-    text-align: center;
-  }
-
-  .logo-img {
-    margin-bottom: 10px;
-  }
-
-   .dropdown-content {
-    right: 0;
-    left: auto;
-    transform: none;
-  }
-}
-
-/* Efek hover & klik untuk tombol dropdown */
-.dropdown-button {
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.dropdown-button::after {
-  content: "";
-  position: absolute;
-  left: -50%;
-  top: 0;
-  width: 200%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(0, 180, 216, 0.3), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.4s ease;
-}
-
-.dropdown-button:hover {
-  background-color: #0096c7;
-  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
-}
-
-.dropdown-button:hover::after {
-  transform: translateX(100%);
-}
-
-.dropdown-button:active {
-  transform: scale(0.97);
-}
-
-/* Animasi fade-in untuk .anggota */
-.anggota.hidden {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.anggota.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Dropdown aktif */
-.dropdown-content.active {
-  display: block;
-}
-
-/* Saat class .show ditambahkan dari JS, menu dropdown muncul */
-.dropdown-content.show {
-  display: block;
-}
-
-/* Tombol Scroll to Top */
+/* ==== 6. UTILITIES & ANIMATIONS ==== */
+/* --- Tombol Scroll to Top --- */
 #scrollToTop {
   position: fixed;
   bottom: 20px;
@@ -271,10 +255,10 @@ footer {
   border-radius: 50%;
   font-size: 1.5rem;
   cursor: pointer;
-  display: none; 
+  display: none;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 999;
 }
@@ -284,6 +268,7 @@ footer {
   background: linear-gradient(90deg, #0096c7, #48cae4);
 }
 
+/* Class .show/.hide ditambahkan via JS */
 #scrollToTop.show {
   display: flex;
   animation: fadeIn 0.3s ease forwards;
@@ -293,7 +278,19 @@ footer {
   animation: fadeOut 0.3s ease forwards;
 }
 
-/* Animasi */
+/* --- Animasi Fade-in untuk Anggota --- */
+.anggota.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.anggota.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Keyframes untuk Animasi --- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -304,35 +301,39 @@ footer {
   to { opacity: 0; transform: translateY(20px); }
 }
 
-/* ==== Extra Responsive for Mobile ==== */
+/* ==== 7. RESPONSIVE DESIGN ==== */
+/* --- Tablet (lebar max 768px) --- */
+@media (max-width: 768px) {
+  .header-container {
+    flex-wrap: nowrap;
+  }
+}
+
+/* --- Mobile (lebar max 600px) --- */
 @media (max-width: 600px) {
   body {
     font-size: 0.9rem;
-    padding: 0;
   }
-
+  
   header {
     padding: 10px 0;
   }
 
   .logo-img {
-    height: 55px;  
-    margin: 0 0 8px 0;
+    height: 55px;
   }
 
   .logo-text h1 {
-    font-size: 1.3rem; 
-    text-align: left;
+    font-size: 1.3rem;
   }
 
   .subheading {
     font-size: 0.75rem;
-    text-align: left;
   }
-
+  
   main {
-    margin: 15px 10px;
-    padding: 10px;
+    margin: 15px auto;
+    padding: 0 10px;
   }
 
   h2 {
@@ -346,26 +347,16 @@ footer {
   .anggota p {
     font-size: 0.85rem;
   }
-
+  
   .visi-misi {
     padding: 15px;
   }
 
   .dropdown-content {
-    position: absolute;
-    right: 0;
-    left: auto;
     width: 180px;
     margin-top: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
   }
-
-  .dropdown-content a {
-    text-align: left;
-    padding: 10px 15px;
-  }
-
+  
   #scrollToTop {
     width: 40px;
     height: 40px;
@@ -373,34 +364,8 @@ footer {
     bottom: 15px;
     right: 15px;
   }
-}
-
-/* ==== Style untuk Foto Profil Kemal ==== */
-
-/* Style untuk wadah/container yang membungkus kedua gambar */
-.profile-images {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
-
-/* Style untuk masing-masing gambar di dalamnya */
-.profile-images img {
-  width: 100%;
-  max-width: 250px;
-  height: auto; 
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.profile-images img:hover {
-  transform: scale(1.05);
-}
-
-/* ==== Aturan Tambahan untuk Layar Kecil (HP) ==== */
-@media (max-width: 600px) {
+  
+  /* Aturan responsif untuk foto profil di mobile */
   .profile-images {
     flex-direction: column;
     align-items: center;

@@ -4,83 +4,63 @@
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => scope.querySelectorAll(selector);
 
-// Toggle dropdown menu
+// === 1. Toggle Dropdown Menu ===
 const dropdownButton = $('#dropdownButton');
 const dropdownMenu = $('#dropdownMenu');
 
 if (dropdownButton && dropdownMenu) {
   dropdownButton.addEventListener('click', e => {
     e.stopPropagation();
-    dropdownMenu.classList.toggle('show');
+    const isExpanded = dropdownMenu.classList.toggle('show');
+    dropdownButton.setAttribute('aria-expanded', isExpanded);
   });
 
-  // Tutup dropdown kalau klik di luar
-  window.addEventListener('click', e => {
-    if (!dropdownMenu.contains(e.target) && e.target !== dropdownButton) {
+  // Tutup dropdown jika klik di luar
+  window.addEventListener('click', () => {
+    if (dropdownMenu.classList.contains('show')) {
       dropdownMenu.classList.remove('show');
+      dropdownButton.setAttribute('aria-expanded', 'false');
     }
   });
 
-  // Auto close kalau resize ke layar besar
+  // Auto close saat layar membesar
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 768 && dropdownMenu.classList.contains('show')) {
       dropdownMenu.classList.remove('show');
+      dropdownButton.setAttribute('aria-expanded', 'false');
     }
   });
 }
 
-// Efek fade-in saat halaman dimuat
+// === 2. Efek Fade-in pada Section saat Halaman Dimuat ===
 window.addEventListener('DOMContentLoaded', () => {
   $$('section').forEach((section, i) => {
-    section.style.opacity = 0;
+    section.style.opacity = '0';
     section.style.transform = 'translateY(20px)';
+    
     setTimeout(() => {
       section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-      section.style.opacity = 1;
+      section.style.opacity = '1';
       section.style.transform = 'translateY(0)';
     }, i * 200);
   });
 });
 
-// Efek hover interaktif di gambar (khusus gambar konten, bukan semua)
-$$('img.flowchart-img, .logo-img').forEach(img => {
-  img.style.transition = 'transform 0.3s ease';
-  img.addEventListener('mouseenter', () => {
-    img.style.transform = 'scale(1.05)';
+// === 3. Tombol Back to Top ===
+const backToTopBtn = $('#backToTopBtn');
+
+if (backToTopBtn) {
+  // Tampilkan tombol saat scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
   });
-  img.addEventListener('mouseleave', () => {
-    img.style.transform = 'scale(1)';
+
+  // Fungsi scroll ke atas saat diklik
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-});
-
-// Tombol back to top
-const backToTopBtn = document.createElement('button');
-backToTopBtn.textContent = '⬆';
-backToTopBtn.className = 'back-to-top';
-
-// Styling dasar tombol
-Object.assign(backToTopBtn.style, {
-  display: 'none',
-  position: 'fixed',
-  bottom: '20px',
-  right: '20px',
-  padding: '10px 15px',
-  fontSize: '18px',
-  borderRadius: '50%',
-  border: 'none',
-  background: '#333',
-  color: '#fff',
-  cursor: 'pointer',
-  zIndex: '1000',
-});
-
-backToTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-document.body.appendChild(backToTopBtn);
-
-// Munculin tombol back to top pas scroll
-window.addEventListener('scroll', () => {
-  backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-});
+}
