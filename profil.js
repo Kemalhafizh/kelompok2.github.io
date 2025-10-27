@@ -1,6 +1,3 @@
-/* =========================
-   PROFIL.JS - FINAL VERSION
-   ========================= */
 
 // Utility selector untuk kode yang lebih ringkas
 const $ = (selector, scope = document) => scope.querySelector(selector);

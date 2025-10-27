@@ -1,9 +1,4 @@
 'use strict';
-
-// ===================================
-// KANTAK.JS - FINAL VERSION
-// ===================================
-
 // -------------------- Utilities --------------------
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => root.querySelectorAll(selector);
